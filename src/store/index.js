@@ -1,21 +1,11 @@
 import Vuex from 'vuex';
-import axios from 'axios';
+
+import nav from './modules/nav';
+import articles from './modules/articles';
 
 export const store = new Vuex.Store({
-  state: {
-    articles: []
+  modules: {
+    nav,
+    articles,
   },
-  mutations: {
-    setArticles(state, payload) {
-      state.articles = payload.articles;
-    }
-  },
-  actions: {
-    getServerArticles({ commit }) {
-      axios.get('/api/tiles')
-        .then((response) => {
-          commit('setArticles', {articles: response});
-        })
-    }
-  }
 });
