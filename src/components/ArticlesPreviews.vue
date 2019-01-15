@@ -2,6 +2,7 @@
     <section>
         <ArticlePreview
             v-for="article in articles"
+            :key="article.id"
             :img="article.img"
             :title="article.title"
             :description="article.description"
@@ -12,7 +13,7 @@
 <script>
   import { mapState } from 'vuex'
 
-  import ArticlePreview from './ArticlePreview';
+  import ArticlePreview from './ArticlePreview.vue';
 
   export default {
     name: "ArticlesPreviews",

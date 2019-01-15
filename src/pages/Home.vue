@@ -7,12 +7,15 @@
 </template>
 
 <script>
-  import DefaultLayout from '../layouts/DefaultLayout';
-  import ArticlesPreviews from '../components/ArticlesPreviews';
+  import DefaultLayout from '../layouts/DefaultLayout.vue';
+  import ArticlesPreviews from '../components/ArticlesPreviews.vue';
 
   export default {
-    name: "Home",
-    components: {ArticlesPreviews, DefaultLayout },
+    name: "home",
+    components: {
+      ArticlesPreviews,
+      DefaultLayout
+    },
   }
 </script>
 
