@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="header">
         <Nav />
     </header>
 </template>
@@ -13,6 +13,14 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import '~bootstrap/scss/functions';
+    @import '~bootstrap/scss/mixins';
+    @import '~bootstrap/scss/variables';
 
+    .header {
+        padding: 10px;
+        border: 2px solid black;
+        margin-bottom: $grid-gutter-width / 2;
+    }
 </style>
