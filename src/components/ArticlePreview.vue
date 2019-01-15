@@ -1,7 +1,8 @@
 <template>
     <article>
-        <h2>Tile 1</h2>
-        <div>Tile Description</div>
+        <img :src="img" />
+        <h2>{{ title }}</h2>
+        <div>{{ description }}</div>
     </article>
 </template>
 

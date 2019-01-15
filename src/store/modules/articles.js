@@ -6,7 +6,7 @@ const state = {
 
 const mutations = {
   setArticles(state, payload) {
-    state.articles = payload.articles;
+    state.items = payload.items;
   }
 };
 
@@ -14,8 +14,15 @@ const actions = {
   getServerArticles({ commit }) {
     axios.get('/api/tiles')
       .then((response) => {
-        commit('setArticles', {articles: response});
-      })
+        const tilesWithImages = response.data.tiles.map((tile) => {
+          return {
+            ...tile,
+            img: 'http://placekitten.com/200/300',
+          };
+        });
+
+        commit('setArticles', { items: tilesWithImages });
+      });
   }
 };
 
