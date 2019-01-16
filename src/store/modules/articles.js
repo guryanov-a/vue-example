@@ -15,9 +15,17 @@ const actions = {
     axios.get('/api/tiles')
       .then((response) => {
         const tilesWithImages = response.data.tiles.map((tile) => {
+          let img;
+
+          if (tile.type === 'normal') {
+            img = 'http://placekitten.com/g/400/300';
+          } else {
+            img = 'http://placekitten.com/g/800/300';
+          }
+
           return {
             ...tile,
-            img: 'http://placekitten.com/200/300',
+            img,
           };
         });
 

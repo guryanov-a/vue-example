@@ -1,12 +1,20 @@
 <template>
     <section>
-        <ArticlePreview
-            v-for="article in articles"
-            :key="article.id"
-            :img="article.img"
-            :title="article.title"
-            :description="article.description"
-        />
+        <div class="row">
+            <div
+                v-for="article in articles"
+                :class="article.type === 'normal' ? 'col col-12 col-sm-6 col-md-4' : 'col col-12 col-md-8'"
+            >
+                <ArticlePreview
+                    class="article-preview"
+                    :class="article.type !== 'normal' && 'article-preview_width_double'"
+                    :key="article.id"
+                    :img="article.img"
+                    :title="article.title"
+                    :description="article.description"
+                />
+            </div>
+        </div>
     </section>
 </template>
 

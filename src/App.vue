@@ -11,16 +11,15 @@
 </script>
 
 <style lang="scss">
+    // default vendor set up
     @import '~bootstrap/scss/functions';
     @import '~bootstrap/scss/mixins';
     @import '~bootstrap/scss/variables';
 
-    $grid-breakpoints: (
-        xs: 0,
-        sm: 480px,
-        md: 1024px
-    );
+    // custom set up
+    @import './styles/variables';
 
+    // vendors
     @import '~normalize.css';
     @import '~bootstrap/scss/bootstrap-grid';
 
