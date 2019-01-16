@@ -8,7 +8,9 @@
             >
                 <router-link
                     :to="navItem.link"
-                    class="nav__link"
+                    class="nav__link nav-link"
+                    active-class="nav-link_active"
+                    exact-active-class="nav-link_exact-active"
                 >{{ navItem.title }}</router-link>
             </li>
         </ul>
@@ -36,6 +38,15 @@
         }
         &__item {
             margin-right: 15px;
+            font-size: 18px;
+        }
+    }
+
+    .nav-link {
+        &_exact-active {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 700;
         }
     }
 </style>

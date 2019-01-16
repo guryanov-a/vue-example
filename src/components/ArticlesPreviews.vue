@@ -35,6 +35,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import '~bootstrap/scss/functions';
+    @import '~bootstrap/scss/mixins';
+    @import '~bootstrap/scss/variables';
 
+    .article-preview {
+        margin-bottom: $grid-gutter-width;
+    }
 </style>

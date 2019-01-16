@@ -21,6 +21,6 @@
     .header {
         padding: 10px;
         border: 2px solid black;
-        margin-bottom: $grid-gutter-width / 2;
+        margin-bottom: $grid-gutter-width;
     }
 </style>
