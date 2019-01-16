@@ -1,14 +1,15 @@
 <template>
-    <section>
+    <section class="articles-previews">
         <div class="row">
             <div
                 v-for="article in articles"
                 :class="article.type === 'normal' ? 'col col-12 col-sm-6 col-md-4' : 'col col-12 col-md-8'"
             >
                 <ArticlePreview
-                    class="article-preview"
-                    :class="article.type !== 'normal' && 'article-preview_width_double'"
+                    class="articles-previews__item"
+                    :class="article.type === 'double' && 'article-preview_width_double'"
                     :key="article.id"
+                    :id="article.id"
                     :img="article.img"
                     :title="article.title"
                     :description="article.description"
@@ -30,7 +31,7 @@
       articles: state => state.articles.items,
     }),
     created() {
-      this.$store.dispatch('articles/getServerArticles');
+      this.$store.dispatch('articles/loadArticles');
     },
   }
 </script>
