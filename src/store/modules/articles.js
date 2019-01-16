@@ -16,9 +16,10 @@ const mutations = {
 
 const actions = {
   loadArticles({ commit }) {
-    axios.get('/api/tiles')
-      .then((response) => {
-        const tilesWithImages = response.data.tiles.map((tile) => {
+    axios
+      .get('/api/tiles')
+      .then(response => {
+        const tilesWithImages = response.data.tiles.map(tile => {
           let img;
 
           if (tile.type === 'normal') {
@@ -34,16 +35,23 @@ const actions = {
         });
 
         commit('setArticles', { items: tilesWithImages });
+      })
+      .catch(error => {
+        console.error(error);
       });
   },
   loadArticle({ commit }, payload) {
-    axios.get('/api/tiles')
-      .then((response) => {
-        const article = response.data.tiles.find((tile) => {
+    axios
+      .get('/api/tiles')
+      .then(response => {
+        const article = response.data.tiles.find(tile => {
           return tile.id === payload.id;
         });
 
         commit('setArticle', { article });
+      })
+      .catch(error => {
+        console.error(error);
       });
   },
 };

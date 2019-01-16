@@ -21,7 +21,7 @@
       this.$store.dispatch('articles/loadArticle', { id });
     },
     beforeDestroy() {
-        this.$store.commit('articles/setArticle', { article: {} });
+      this.$store.commit('articles/setArticle', { article: {} });
     },
   }
 </script>
